@@ -15,7 +15,7 @@ class TriangleView: GLSurfaceView{
         
         glColor4f(0.5, 0.5, 0.5, 1.0)
         
-        var positions: [GLfloat] = [
+        let positions: [GLfloat] = [
         0.0,1.0,0.0,
         0.0,0.0,0.0,
         1.0,1.0,0.0,

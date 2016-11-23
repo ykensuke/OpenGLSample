@@ -12,11 +12,11 @@ import OpenGLES
 
 class GLSurfaceView: UIView {
 
-    private var context: EAGLContext?
-    private var viewFramebuffer = GLuint()
-    private var viewRenderbuffer = GLuint()
+    fileprivate var context: EAGLContext?
+    fileprivate var viewFramebuffer = GLuint()
+    fileprivate var viewRenderbuffer = GLuint()
 
-    override class func layerClass() -> AnyClass {
+    override class var layerClass : AnyClass {
         return CAEAGLLayer.self
     }
 
@@ -25,14 +25,14 @@ class GLSurfaceView: UIView {
         super.init(frame: frame)
         
         let eaglLayer: CAEAGLLayer = self.layer as! CAEAGLLayer
-        eaglLayer.opaque = true
+        eaglLayer.isOpaque = true
         eaglLayer.drawableProperties = [
             kEAGLDrawablePropertyRetainedBacking: false,
             kEAGLDrawablePropertyColorFormat: kEAGLColorFormatRGBA8
-            ] as NSDictionary as [NSObject : AnyObject]
+            ] as NSDictionary as! [AnyHashable: Any]
         
-        context = EAGLContext(API: EAGLRenderingAPI.OpenGLES1)
-        EAGLContext.setCurrentContext(context)
+        context = EAGLContext(api: EAGLRenderingAPI.openGLES1)
+        EAGLContext.setCurrent(context)
         
         glGenFramebuffersOES(1, &viewFramebuffer)
         glBindFramebufferOES(GLenum(GL_FRAMEBUFFER_OES), viewFramebuffer)
@@ -42,7 +42,7 @@ class GLSurfaceView: UIView {
 
         glFramebufferRenderbufferOES(GLenum(GL_FRAMEBUFFER_OES), GLenum(GL_COLOR_ATTACHMENT0_OES), GLenum(GL_RENDERBUFFER_OES), viewRenderbuffer)
         
-        self.context!.renderbufferStorage(Int(GL_RENDERBUFFER_OES), fromDrawable:eaglLayer)
+        self.context!.renderbufferStorage(Int(GL_RENDERBUFFER_OES), from:eaglLayer)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -51,8 +51,8 @@ class GLSurfaceView: UIView {
     
     override func layoutSubviews() {
         
-        var width = self.bounds.size.width
-        var height = self.bounds.size.height
+        let width = self.bounds.size.width
+        let height = self.bounds.size.height
 
         glViewport(0, 0, GLsizei(width), GLsizei(height));
         
@@ -60,7 +60,7 @@ class GLSurfaceView: UIView {
     }
 
     func render() {
-        EAGLContext.setCurrentContext(context)
+        EAGLContext.setCurrent(context)
         glBindFramebufferOES(GLenum(GL_FRAMEBUFFER_OES), GLenum(viewFramebuffer))
         glClearColor(0.0, 0.0, 0.0, 0.0)
         glClear(GLenum(GL_COLOR_BUFFER_BIT))

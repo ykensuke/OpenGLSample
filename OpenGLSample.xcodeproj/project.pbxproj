@@ -169,9 +169,12 @@
 				TargetAttributes = {
 					40ED2FF61B216C6C0023C8DD = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 7RQB5YK9T6;
+						LastSwiftMigration = 0810;
 					};
 					40ED300B1B216C6C0023C8DD = {
 						CreatedOnToolsVersion = 6.3;
+						LastSwiftMigration = 0810;
 						TestTargetID = 40ED2FF61B216C6C0023C8DD;
 					};
 				};
@@ -329,9 +332,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7RQB5YK9T6;
 				INFOPLIST_FILE = OpenGLSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -339,9 +344,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7RQB5YK9T6;
 				INFOPLIST_FILE = OpenGLSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -360,6 +367,7 @@
 				INFOPLIST_FILE = OpenGLSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGLSample.app/OpenGLSample";
 			};
 			name = Debug;
@@ -375,6 +383,7 @@
 				INFOPLIST_FILE = OpenGLSampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGLSample.app/OpenGLSample";
 			};
 			name = Release;
@@ -398,6 +407,7 @@
 				40ED30181B216C6C0023C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40ED30191B216C6C0023C8DD /* Build configuration list for PBXNativeTarget "OpenGLSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -406,6 +416,7 @@
 				40ED301B1B216C6C0023C8DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

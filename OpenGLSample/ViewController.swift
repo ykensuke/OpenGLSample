@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var triangleView = TriangleView(frame: CGRectMake(0,0,self.view.frame.width,self.view.frame.height));
+        let triangleView = TriangleView(frame: CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height));
         self.view.addSubview(triangleView)
     }
     
